@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabutar aur Malkin - ایک پیاری کہانی</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .subtitle {
+            font-size: 1.8em;
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        .story-content {
+            margin-top: 40px;
+        }
+
+        .character-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .character-section:nth-child(2) {
+            animation-delay: 0.2s;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .character-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .character-name {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .character-name-urdu {
+            font-size: 2.5em;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .character-description {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .character-description-urdu {
+            font-size: 1.5em;
+            line-height: 2;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-title {
+            font-size: 2.2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .intro-title-urdu {
+            font-size: 2.8em;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0;
+            animation: floatUp 8s infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 40%; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 55%; animation-delay: 1s; }
+        .heart:nth-child(5) { left: 70%; animation-delay: 3s; }
+        .heart:nth-child(6) { left: 85%; animation-delay: 5s; }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header .subtitle {
+                font-size: 1.4em;
+            }
+
+            .character-name {
+                font-size: 1.6em;
+            }
+
+            .character-name-urdu {
+                font-size: 2em;
+            }
+
+            .character-description {
+                font-size: 1em;
+            }
+
+            .character-description-urdu {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts">
+        <div class="heart">❤️</div>
+        <div class="heart">💕</div>
+        <div class="heart">💗</div>
+        <div class="heart">💖</div>
+        <div class="heart">💝</div>
+        <div class="heart">💓</div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Kabutar aur Malkin</h1>
+            <div class="subtitle urdu-text">کبوتر اور مالکن</div>
+        </div>
+
+        <div class="intro-section">
+            <div class="intro-title">Part 1: Introduction of Characters</div>
+            <div class="intro-title-urdu urdu-text">حصہ اول: کرداروں کا تعارف</div>
+        </div>
+
+        <div class="story-content">
+            <div class="character-section">
+                <div class="character-icon">🕊️</div>
+                <div class="character-name">Kabutar (Pigeon)</div>
+                <div class="character-name-urdu urdu-text">کبوتر</div>
+                <div class="character-description">A lovely pigeon who lives with his mistress</div>
+                <div class="character-description-urdu urdu-text">
+                    ایک پیارا سا کبوتر ہے جو اپنی مالکن کے ساتھ رہتا ہے۔
+                </div>
+                <div class="character-description-urdu urdu-text">
+                    وہ اپنی مالکن سے بہت پیار کرتا ہے اور اس کی خوشی کا خیال رکھتا ہے۔
+                </div>
+            </div>
+
+            <div class="character-section">
+                <div class="character-icon">👩</div>
+                <div class="character-name">Malkin (Mistress)</div>
+                <div class="character-name-urdu urdu-text">مالکن</div>
+                <div class="character-description">The mistress who takes care of the pigeon</div>
+                <div class="character-description-urdu urdu-text">
+                    مالکن کبوتر کا خیال رکھتی ہے۔
+                </div>
+                <div class="character-description-urdu urdu-text">
+                    وہ اسے کھانا دیتی ہے اور اس کی دیکھ بھال کرتی ہے۔
+                </div>
+                <div class="character-description-urdu urdu-text">
+                    اس کی کبوتر سے گہری دوستی ہے۔
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.character-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
